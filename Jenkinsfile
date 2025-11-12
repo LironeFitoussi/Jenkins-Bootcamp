@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm install --prefer-offline
+                    npm install
                     npm run build
                     ls -la
                 '''
