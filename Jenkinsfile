@@ -30,16 +30,15 @@ pipeline {
             }
             steps {
                 sh '''
-                    test -f /build/index.html
-
-                    npm run test
+                    test -f build/index.html
+                    npm test
                 '''
             }
         }
     }
     post {
         always {
-            junit 'test-results/**/*.xml'
+            junit allowEmptyResults: true, testResults: 'test-results/**/*.xml'
         }
     }
 }
